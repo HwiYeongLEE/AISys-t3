@@ -79,7 +79,7 @@ from_file = gr.Interface(
         gr.Audio(sources="upload", type="numpy", label="Audio file"),
     ],
     outputs=[
-        gr.Textbox(label='Generated Question', lines=6)
+        gr.Textbox(label='Generated Question', lines=10)
     ],
     theme="huggingface",
     allow_flagging="never",
@@ -103,7 +103,7 @@ from_youtube = gr.Interface(
 with demo:
     gr.TabbedInterface([from_file, from_youtube], ["Audio file", "YouTube"])
 
-demo.launch()
+demo.launch(share=True)
 
 
 
